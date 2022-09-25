@@ -137,7 +137,7 @@ public class returnBook extends javax.swing.JFrame {
         String bookID = jTextField1.getText();
         String studentID = jTextField2.getText();
         
-        try{
+        try {
             Connection con = ConnectionProvider.getCon();
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("select *from issue where bookID='"+bookID+"' and studentID='"+studentID+"'");
@@ -150,7 +150,7 @@ public class returnBook extends javax.swing.JFrame {
                 jTextField2.setEditable(false);
             }
             
-            else{
+            else {
                 JOptionPane.showMessageDialog(null,"Book is not issued to this student");
                 //When Incorrect refreshing the page
                 setVisible(false);
